@@ -8,7 +8,7 @@ type layoutProps = {
 const layout = ({ children }: layoutProps) => {
   return (
     <AuthContextProvider>
-      <div className="">{children}</div>
+      <div className="h-screen">{children}</div>
     </AuthContextProvider>
   );
 };

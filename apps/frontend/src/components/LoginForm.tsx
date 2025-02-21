@@ -1,5 +1,6 @@
 import { useAuthContext } from "@/contexts/AuthContext";
 import { IconBrandGoogle } from "@tabler/icons-react";
+import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 
 type LoginFormProps = {
@@ -7,7 +8,7 @@ type LoginFormProps = {
 };
 
 const LoginForm = ({ handleRegister }: LoginFormProps) => {
-  const { login } = useAuthContext();
+  const { signWithGoogle } = useAuthContext();
 
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -82,7 +83,7 @@ const LoginForm = ({ handleRegister }: LoginFormProps) => {
             <button
               type="submit"
               className="flex w-full justify-center rounded-md bg-transparent px-3 py-1.5 text-sm/6    border border-zinc-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600  gap-2  hover:backdrop-brightness-95"
-              onClick={login}
+              onClick={signWithGoogle}
             >
               <IconBrandGoogle stroke={1} fill="black" />
               <span>Sign in with Google</span>
